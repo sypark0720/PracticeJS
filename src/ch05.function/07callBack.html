@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //함수도 자료형이므로 매개변수로 전달 가능
+    function callTenTimes(callback){
+      for(var i=0; i<10; i++){
+        callback();
+      }
+    }
+
+    //이렇게도 가능
+    function callTenTimes(function(){
+      alert('callback called');
+    });
+
+    var callback=function(){
+      alert('callback called');
+    };
+
+    callTenTimes(callback());
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+
+    //var func1 = function(){};
+    //web browser는 script내부 내용을 한 줄씩 읽기 전에 선언적 함수부터 읽는다.
+    func1();
+    function func1(){alert('func1');}
+
+    //question
+    var func2 = function(){
+      alert('anonymous');
+    }
+    function func2(){
+      alert('declarative');
+    }
+
+    func2();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    function pythagoras(width, height){
+      //square이름이 겹침!
+      //내부함수는 pythagoras내에서만 쓸 수 있다...
+      function square(){
+        return x*x;
+      }
+
+      return Math.sqrt(square(width)+square(height));
+    }
+
+    function square(width,height){
+      return width+height;
+    }
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
