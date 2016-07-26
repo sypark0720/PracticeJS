@@ -4,8 +4,21 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <script>
+    function test(name){
+      var output = 'Hello '+name+'.. !';
+      return function(){
+        alert(output);
+      };
+    }
 
+    test('JavaScript')();
+   //앞에가 변수       //함수가 리턴되므로 한 번 더 호출
 
+    var test_1 = test('Test1');
+    var test_2 = test('Test2');
+
+    test_1();
+    test_2();
 
 
   </script>

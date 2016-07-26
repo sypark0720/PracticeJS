@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    var intervalID = setIntrval(function (){
+      alert('<p>'+ new Date() + '</p>');
+    },1000);
+
+    setTimeout(function (){
+      clearInterval(intervalID);
+    },1000);
+
+
+    //타이머 함수와 웹 요청은 웹 브라우저가 처리하고 처리가 완료되었다는 것을 자바스크립트에게 알려주는 방식
+    //현재 단위가 끝나기 전에는 실행되지 않는다.
+    //즉, 자바스크립트를 다 읽고 브라우저가 실행될 때 처리되는 방식
+
+    //인코딩
+    var URI = 'http://hanb.co.kr?test=한글입니다';
+
+    var output = '';
+    output += '★escape()\n'
+    output += escape(URI)+'\n\n';
+    output += '★encodeURI()\n'
+    output += encodeURI(URI)+'\n\n';
+    output += '★encodeURIComponent()\n' //UTF-8과 같다.
+    output += encodeURIComponent(URI)+'\n\n';
+
+    alert(output);
+
+    //eval()
+    eval('alert(10)'); //문자열을 코드로 실행한다.
+
+    //숫자 확인함수
+    isFinite(1/0);
+    isNaN(--);
+
+    //숫자 변환 함수
+
+
+
+
+
+
+
+
+
+
+    parseInt('1000원'); //1000나옴
+    parseFloat('1.5$'); //1.5나옴
+
+    parseInt('FF', 16); //255나옴
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
