@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    var person = {
+      name: 'Amy',
+      eat: function(food){
+        alert(this.name+' eats '+food);
+      }
+    };
+
+    person.eat('pizza');
+
+    var output = '';
+    for(var key in person){ //variable key에는 key가 들어간다.
+      output += '*'+key+': '+person[key]+'\n';
+    }
+    alert(output);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

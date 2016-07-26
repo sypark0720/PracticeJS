@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    var student={
+      name: 'amy',
+      korean: 96,
+      english: 92,
+      math: 98,
+      science: 98
+    }
+
+    var output ='';
+    output += "'name' in student: "+('name' in student)+'\n'
+    alert(output);
+
+    var output ='';
+    with(student){
+      output+=name+'\n';
+      output+='korean'+korean+'\n';
+    }
+
+    alert(output);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

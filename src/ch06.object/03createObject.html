@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    function makeStudent(name, korean, math, english, science){
+      var willReturn = {
+        name: name,
+        korean: korean,
+        math: math,
+        english: english,
+        science: science,
+
+        getSum: function(){
+          return this.korean+this.math+this.english+this.science;
+        },
+
+        getAverage: function(){
+          return this.getSum()/4;
+        },
+
+        toString: function(){
+          return this.name+'\t'+this.getSum()+'\t'+this.getAverage();
+        }
+      };
+      return willReturn;
+    }
+
+
+    var students=[];
+    students.push(makeStudent('Bob', 100, 80, 90, 85));
+    students.push(makeStudent('Cindy', 85, 60, 75, 100));
+
+    var output = '이름\t총점\t평균\n';
+    for (var i in students){
+      output += students[i].toString()+'\n';
+    }
+
+    alert(output);
+
+    //but 생성자 함수를 사용하면 기능이 많은 객체를 더 쉽게 만들 수 있다.
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

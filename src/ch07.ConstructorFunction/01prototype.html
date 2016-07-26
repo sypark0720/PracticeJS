@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //prototype 공간은 생성자 함수로 생성된 객체가 공통으로 가지는 공간.
+    //메소드를 프로토타입 안에 넣어준다.
+
+    //생성자 함수의 이름 첫글자는 대문자
+
+    function Student(name, korean, math, english, science) {
+
+      this.name = name;
+      this.korean = korean;
+      this.math = math;
+      this.english = english;
+      this.science = science;
+    }
+
+    Student.prototype.getSum = function(){
+          return this.korean+this.math+this.english+this.science;
+        };
+    Student.prototype.getAverage = function(){
+          return this.getSum()/4;
+        };
+    Student.prototype.toString = function(){
+          return this.name+'\t'+this.getSum()+'\t'+this.getAverage();
+        };
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

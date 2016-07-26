@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    function Rectangle(w, h){
+      var width = w;
+      var height = h;
+
+      this.getWidth = function(){return w;};
+      this.getHeight = function(){return h;};
+      this.setWidth = function(w){
+        if (w<0){
+          throw 'length cannot be negative';
+        }else{
+          width = w;
+        }
+      };
+      this.setHeight=function(h){
+        if (h<0){
+          throw 'length cannot be negative';
+        }else{
+          height = h;
+        }
+      };
+    }
+
+    Rectangle.prototype.getArea = function(){
+      return this.getWidth()*this.getHeight();
+    };
+  </script>
+  <script>
+    function Square(length){
+      this.base = Rectangle;
+      this.base(length, length);
+    }
+    Square.prototype = Rectangle.prototype;
+    Square.prototype.constructor = Square;
+
+    //정확한 상속 방법은 없다.
+    //기준은 intanceof키워드 사용 시 true출력하면 상속된다고 판단.
+    var square = new Square(5);
+    alert(square instanceof Rectangle);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
