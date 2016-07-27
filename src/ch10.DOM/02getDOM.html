@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //getElementById() : 한 번에 하나의 객체 가져온다.
+
+    window.onload = function(){
+      var headers = document.getElementsByTagName('h1'); //배열. tag의 name 속성이 h1과 일치하는 문서 객체를 배열로 가져온다.
+
+      headers[0].innerHTML= 'withwith';
+      headers[1].innerHTML= 'lalalalal';
+    };
+  </script>
+</head>
+<body>
+<h1>
+  Header1
+</h1>
+<h1>
+  Header2
+</h1>
+
+</body>
+</html>

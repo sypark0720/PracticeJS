@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //문서 객체 모델 생성 (tree)
+
+    window.onload = function () {
+      //노드만 생성
+      var header = document.createElement('h1');
+      var textNode = document.createTextNode('Hello DOM');
+
+      //객체에 노드 연결
+      header.appendChild(textNode);
+      document.body.appendChild(header);
+
+      //문서 객체의 속성 메소드
+      //setAttribute(name, value)
+      //getAttribute(name)
+    }
+
+
+    //더 쉬운 방법:innerHTML document.body.innerHTML = '어쩌구...';
+  </script>
+</head>
+<body>
+
+</body>
+</html>
