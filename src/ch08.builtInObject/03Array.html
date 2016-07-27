@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //변수 선언
+    var array1 = [1,2,3,4];
+    var array2 = new Array();
+    var array3 = new Array(10);
+    var array4 = new Array(1,2,3,4);
+
+    //메서드:
+    //concat() -->합쳐서 배열로 만들어 리턴
+    //join() -->문자열로 만들어 리턴
+    //pop()
+    //push()
+    //reverse()
+    //slice()
+    //sort() --> 문자열 오름차순으로 정렬(숫자도)
+    //splice()
+
+    Array.prototype.remove = function (index){
+      this.splice(index,1);
+    }
+
+    var array = [52, 273,103,32,274,129];
+
+    for(var i = array.length-1; i>=0; i--){
+      if (array[i]>100){
+        array.remove(i);
+      }
+    }
+
+    alert(array);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

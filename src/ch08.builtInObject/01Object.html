@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    var numberFromLiteral = 273;
+    var numberFromObject = new Number(273);
+
+    if(numberFromLiteral.constructor==Number){
+      alert('numberFromLiteral is Number');
+    }
+    if(numberFromObject.constructor==Number){
+      alert('numberFromObject is Number');
+    }
+
+    //    if(numberFromObject.constructor==number){
+    //alert('numberFromObject is Number');
+    //} 는 객체이므로 경고장을 출력하지 않는다.
+
+    //Object는 최상위 객체이므로 Object의 프로토타입에 속성 또는 메서드 추가하면 모든 객체에서 활용 가능.
+    Object.prototype.test = function(){
+      alert(this);
+    };
+
+    numberFromObject.test();
+  </script>
+</head>
+<body>
+
+</body>
+</html>
