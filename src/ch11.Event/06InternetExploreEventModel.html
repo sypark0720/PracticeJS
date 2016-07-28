@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //attachEvent, detachEvent (eventProperty, eventListener)
+    //뗏다 붙였다 할 수 잇다.
+    //좋은 점: 여러 이벤트를 추가할 수 있다.
+    if(header.attachEvent) {
+      //explorer에만 잇으므로
+      window.attachEvent('onload', function () {
+        var header = document.getElementById('my-header');
+        var handler = function () {
+          alert('click')
+        };
+
+        header.attachEvent('onclick', handler);
+        header.attachEvent('onclick', handler);
+        header.attachEvent('onclick', handler);
+
+        header.detachEvent('onclick', handler);
+
+      });
+
+    }
+    //참고: explorer에서 this 는 window객체를 나타낸다.
+    //발생객체 사용하려면  srcElement써야 한다.
+
+  </script>
+</head>
+<body>
+  <h1 id = "my-header">Click</h1>
+</body>
+</html>

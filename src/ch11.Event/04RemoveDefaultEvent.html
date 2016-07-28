@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //a태그의 default event제거
+    window.onload = function(){
+      document.getElementById('my-form').onsubmit = function(){
+        return false;
+      };
+    };
+  </script>
+</head>
+<body>
+<form id = "my-form">
+  inline 형태는 <form onsubmit = "return whenSubmit()"></form>
+  <input type = "submit" value="제출">
+</form>
+
+</body>
+</html>

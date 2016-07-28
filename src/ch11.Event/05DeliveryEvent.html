@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //커서에 여러 개의 노드가 존재한다면 이벤트는 자식 노드에서 부모 노드 순으로 실행된다.
+    //이를 이벤트 버블링이라고 한다.
+    //이걸 막는 코드
+  window.onload = function(){
+    document.getElementById('header').onclick = function(){
+      alert('header');
+    };
+    document.getElementById('paragraph').onclick = function(e){
+      var event = e || window.event;
+      //e 가 존재하면 e를, e가 undefined이면 window.event속성을 event에 넣는다. (윈도우는 window.event로, 다른 브라우저는 매개변수를 속성으로 전달)
+
+      alert('paragraph');
+
+      //이벤트 전달 제거
+      event.cancelBubble = true; //window에서
+      if(event.stopPropagation){ //다른 브라우저에서 window는 stopPropagation 메소드가 없으므로 에러 방지
+        event.stopPropagation();
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+<h1 id = "header">
+  <p id = "paragraph">Paragraph</p>
+</h1>
+
+</body>
+</html>

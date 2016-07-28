@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    //W3C에서 공식 지정
+    //addEventListener(eventName,handler, useCapture)
+    //removeEventListener(eventName, handler)
+
+    window.onload = function(){
+      var header = document.getElementById('my-header');
+
+      //explorer
+      if (header.attachEvent){
+        var handler = function(){
+          window.event.srcElement.style.color = 'red';
+          window.event.srcElement.detachEvent('onclick', handler);
+        };
+        handler.attachEvent('onclick', handler);
+      }else{
+        //기타 브라우저
+        var handler = function(){
+          this.style.color = 'red';
+          this.removeEventListener('click', handler);
+        };
+        header.addEventListener('click', handler);
+      }
+    };
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
