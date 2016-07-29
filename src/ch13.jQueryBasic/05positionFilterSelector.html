@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    //odd,even,first,last
+
+    $(document).ready(function(){
+      $('tr:odd').css('background', '#f9f9f9');
+      $('tr:even').css('background', '#9f9f9f');
+
+      $('tr:first').css('background', '#000000').css('color', '#ffffff');
+    });
+  </script>
+</head>
+<body>
+<table>
+  <tr><th>name</th><th>blood type</th><th>location</th></tr>
+  <tr><td>Amy</td><td>a</td><td>aaa</td></tr>
+  <tr><td>Bob</td><td>b</td><td>bbb</td></tr>
+  <tr><td>Cindy</td><td>o</td><td>ccc</td></tr>
+  <tr><td>Dave</td><td>ab</td><td>ddd</td></tr>
+  <tr><td>Emily</td><td>a</td><td>eee</td></tr>
+  <tr><td>Fred</td><td>b</td><td>fff</td></tr>
+</table>
+
+</body>
+</html>

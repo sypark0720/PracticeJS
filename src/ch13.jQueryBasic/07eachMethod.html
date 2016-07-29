@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    //2가지 방법
+    //$.each(object, function(index, item){})
+    //$(selector).each(function(index, item){})
+
+    $(document).ready(function(){
+      var array = [
+        { name: "Hanbit Media", link:'http://hanb.co.kr'},
+        { name: "Naver", link:'http://naver.com'},
+        { name: "Daum", link:'http://daum.net'}
+      ];
+
+      $.each(array, function(index, item){
+
+        var output = '';
+
+        output += '<a href="'+item.link+'">';
+        output += '<h1>'+item.name+'</h1>';
+        output += '</a>';
+
+        document.body.innerHTML += output;
+
+      })
+    });
+  </script>
+</head>
+
+<body>
+
+</body>
+</html>

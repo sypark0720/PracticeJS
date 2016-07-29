@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('body>*').css('color', 'red'); //body 태그의 자식으로 범위 한정 (아래의 모두 다 가 아니라 딱 바로 아래 자식만)
+
+    $('body *') //모든 후손 선택
+
+  })
+</script>
+<body>
+
+</body>
+</html>

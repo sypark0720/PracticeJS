@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+
+    //다른 프레임워크에 $가 잇을 때
+    $.noConflickt(); //더 이상 $ 못 씀.
+
+    jQuery(document).ready(function(){
+
+    });
+
+
+    //또는
+    var J = jQuery;
+    J(document).ready(function(){
+      J('h1').removeClass('aaa');
+    });
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

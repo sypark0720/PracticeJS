@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    //n번째에 위치하는 것 등등 선택 가능
+
+    $(document).ready(function(){
+      $('tr:eq(0)').css('background', '#000000').css('color', '#ffffff');
+      $('td:nth-child(3n+1)').css('background', '#565656'); //1,4,7번째 문서 객체 선택
+      $('td:nth-child(3n+2)').css('background', '#a9a9a9');
+      $('td:nth-child(3n+3)').css('background', '#f9f9f9');
+
+    });
+  </script>
+</head>
+<body>
+<table>
+  <tr><th>name</th><th>blood type</th><th>location</th></tr>
+  <tr><td>Amy</td><td>a</td><td>aaa</td></tr>
+  <tr><td>Bob</td><td>b</td><td>bbb</td></tr>
+  <tr><td>Cindy</td><td>o</td><td>ccc</td></tr>
+  <tr><td>Dave</td><td>ab</td><td>ddd</td></tr>
+  <tr><td>Emily</td><td>a</td><td>eee</td></tr>
+  <tr><td>Fred</td><td>b</td><td>fff</td></tr>
+</table>
+
+</body>
+</html>
