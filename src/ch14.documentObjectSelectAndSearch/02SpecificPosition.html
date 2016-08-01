@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('h1').eq(0).css('background', 'orange');
+      $('h1').eq(-1).css('background', 'red'); //음수를 입력하면 뒤쪽을 기준으로 선택
+      $('h1').first().css('background', 'green');
+      $('h1').last().css('background', 'blue');
+
+      //추가 선택
+      $('h1').css('background', 'Gray').add('h2').css('float', 'left');
+    });
+  </script>
+</head>
+<body>
+<h1>Header0</h1>
+<h1>Header1</h1>
+<h1>Header3</h1>
+<h2>Header4</h2>
+<h2>Header5</h2>
+<h2>Header6</h2>
+</body>
+</html>

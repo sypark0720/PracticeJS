@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+//    $(document).ready(function () {
+//      $('h3:even').css({
+//        backgroundColor: 'black',
+//        color:'white'
+//                       });
+//    });
+
+
+    //method1: $(selector).filter(selector);
+    $(document).ready(function () {
+      $('h3').filter(':even').css({
+        backgroundColor: 'black',
+        color: 'white'
+                                  });
+    });
+
+    //method2: $(selector).filter(function(){});
+    $(document).ready(function(){
+      $('h3').filter(function (index){
+        return index % 3 ==0;
+      }).css({
+        backgroundColor: 'black',
+        color: 'white'
+                          });
+    });
+
+    //end()메서드
+    $('h1').css('background','orange');
+    $('h1:even').css('color', 'white');
+    $('h1:odd').css('color', 'red');
+    //chaining 하고 싶을 때 end()는 문서 객체 선택을 한 단계 뒤로 돌린다.
+    $('h1').css('background', 'orange').filter(':even').css('color','white').end().filter(':odd').css('color','red');
+
+
+  </script>
+</head>
+<body>
+<h3>Header0</h3>
+<h3>Header1</h3>
+<h3>Header2</h3>
+<h3>Header3</h3>
+<h3>Header4</h3>
+<h3>Header5</h3>
+</body>
+</html>

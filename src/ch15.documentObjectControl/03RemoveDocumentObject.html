@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('h1').first().remove();//객체를 제거
+
+      $('div').empty();//내부를 제거
+    });
+  </script>
+
+</head>
+<body>
+<div>
+  <h1>Header0</h1>
+  <h1>Header1</h1>
+</div>
+
+</body>
+</html>

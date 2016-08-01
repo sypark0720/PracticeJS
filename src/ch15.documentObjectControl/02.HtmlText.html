@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    //값 받아오기
+    //.html()  (js에서는 innerHTML)
+    //.text()  (js에서는 textContent)
+    //html은 선택자의 첫번째만, text는 선택자로 선택한 모든 문서 객체의 글자를 이어서 출력
+
+    //내부 추가
+    //.html(value);
+    //.text(value);
+    //.html(function(index, html){});
+    //.text(function(index, html){});
+
+    $(document).ready(function(){
+      $('#div-html').html('<h1>$().html() Method</h1>');
+      //h1 tag가 삽입된다.
+      $('#div-text').text('<h1>$().html() Method</h1>');
+      //문자열 그대로가 출력된다.
+
+      $('h1').html(function(index){
+        return '<h2>Header'+index+'</h2>';
+      });
+
+      $('h1').html(function(index){
+        return '*'+html+'*';
+      });
+
+
+    });
+
+
+  </script>
+</head>
+<body>
+  <div id = "div-html"></div>
+  <div id = "div-text"></div>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+</body>
+</html>

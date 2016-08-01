@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .first{color: red;}
+    .second{color: pink;}
+    .third{color: orange;}
+  </style>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+
+    //클래스 관련
+    //addClass('a');
+    //removeClass('a');
+    //toggleClass('a'); //있으면 제거하고, 없으면 추가
+
+    //속성 관련
+    $(document).ready(function(){
+      var src = $('img').attr('src');
+      alert(src);
+
+
+      //attr(name, value);
+      //attr(name, function(index, attr){}); function은 index를 매개변수로 갖는 함수.
+      //attr(object);
+
+      //-->
+      $('img').attr('width', 200);
+      $('img').attr('width', function(index){
+        return (index+1)*100;
+      });
+      $('img').attr({
+        width: function(index){
+          return (index+1)*100;
+        },
+        height:100
+                    });
+
+
+      //removeAttr(name)
+
+
+
+      //스타일 관련
+      //css()
+      var color = $('h1').css('color');
+      //css(name, value);
+      //css(name, function(index, style){});
+      //css(object);
+
+    })
+
+
+  </script>
+</head>
+<body>
+  <img src = "images.jpg">
+  <img src = "images2.jpg">
+  <h1 class="first">Header0</h1>
+  <h2 class = "second">Header1</h2>
+  <h1 class = "third">Header2</h1>
+</body>
+</html>

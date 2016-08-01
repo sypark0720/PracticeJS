@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+
+    //'find' method
+    var xml = '<friends>' +
+              '<friend><name>Amy</name><language>Ruby</language></friend>'+
+              '<friend><name>Bob</name><language>Basic</language></friend>'+
+              '<friend><name>Cindy</name><language>C#</language></friend>'+
+              '</friends>';
+    $(document).ready(function(){
+      var xmlDoc = $.parseXML(xml);
+      $(xmlDoc).find('friend').each(function(index){
+          var output = '<div><h1>'+$(this).find('name').text()+'</h1><p>'+$(this).find('language').text()+'</p></div>';
+
+        document.body.innerHTML += output;
+      });
+    });
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

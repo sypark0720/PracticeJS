@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+    $('h1').each(function(){
+      //is 는 매개변수로 선택자를 입력하여선택한 객체가 선택자와 일치하는지 판별해 boolean을 리턴한다.
+      if($(this).is('.select')){
+        $(this).css('background', 'orange');
+      }
+    });
+    });
+  </script>
+</head>
+<body>
+<h1 class="select">Header0</h1>
+<h1>Header1</h1>
+<h1 class="select">Header2</h1>
+</body>
+</html>
