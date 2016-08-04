@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{margin: 0px; padding:0px}
+    ul{list-style: none;}
+    img{ width: 500px; height:350px;}
+  </style>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="jquery.innerfade.js"></script>
+
+ <!-- innerfade는 ul태그에 적용하는 플러그인이다. li를 자동으로 화면전환-->
+
+  <script>
+    $(document).ready(function(){
+      $('#inner-fade').innerFade({
+        anymationtype: 'fade', // fade, slide
+        speed: 750, //slw, normal, fast, 숫자
+        timeout: 2000, //변경 효과가 적용되는 속도 //2초에 한번씩 이미지 변ㄱㅇ
+        type: 'random', //내용물의 변경방식 sequence, random, random_start
+        containerHeight: '350px' //내용물의 높이. auto 또는 숫자
+                                 });
+    });
+  </script>
+</head>
+<body>
+<ul id = "inner-fade">
+  <li><img src="images.jpg"/></li>
+  <li><img src="images2.jpg"/></li>
+</ul>
+
+</body>
+</html>

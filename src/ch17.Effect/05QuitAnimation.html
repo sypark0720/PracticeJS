@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width:100px;
+      height:100px;
+      background-color: orange;
+      position: relative;
+    }
+  </style>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    //$('div').clearQueue(); --> 애니메이션 큐 제거
+    //$('div').stop(); --> 효과 및 애니메이션 정지
+    //$('div').delay(ms); --> 큐에 있는 명령을 잠시 중지
+
+    //$('div').stop();
+    //$('div').stop(clearQueue);
+    //$('div').stop(clearQueue, goToEnd);
+
+
+    $(document).ready(function(){
+      $('button').click(function(){
+        var html = $(this).html();
+        var evalText = "$('div')."+html;
+
+        eval(evalText); //코드를 동적으로 실행
+      });
+
+      setInterval(function(){
+        $('div').animate({
+          left: '500'
+                         }, 1000).animate({
+          left: '0'
+                                                          },1000);
+      },2000);
+    });
+
+
+
+
+
+  </script>
+</head>
+<body>
+<button>stop()</button>
+<button>stop(true)</button>
+<button>stop(false, true)</button>
+<button>stop(true, true)</button>
+<div></div>
+</body>
+</html>

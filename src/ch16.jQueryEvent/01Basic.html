@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .reverse{
+      background: black;
+      color: white;
+    }
+  </style>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+
+    //이벤트 연결방법
+    //1.
+    //$(selector).on(eventName, function(event){})
+    //$(selector).on(object)
+
+    //2. 간단한 방식
+    //$(selector).method(function(event));
+
+
+    $(document).ready(function(){
+
+      $('h1').on('click', function(){
+        $(this).html(function(index, html){
+          return html+'+';
+        });
+      });
+
+
+
+      $('h1').on({
+        mouseenter: function(){ $(this).addClass('reverse');},
+        mouseleave: function(){ $(this).removeClass('reverse');}
+                 });
+    });
+
+  </script>
+</head>
+<body>
+<h1>Header0</h1>
+<h1>Header1</h1>
+<h1>Header2</h1>
+</body>
+</html>

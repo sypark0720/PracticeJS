@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .reverse{
+      background: black;
+      color: white;
+    }
+  </style>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    // blur: 입력 양식에 초점이 사라질 때
+    // focus : 입력 양식에 초점을 맞출 때
+    // focusin : 입력 양식에 초점이 맞춰지기 바로 전에
+    // focusout
+    // change : 입력 양식의 내용을 변경할 때
+    // select : 입력 양식을 선택할 때
+    // submit : submit 버튼 누를 때
+
+    // load : 윈도우를 불러들일 때
+    // resize : 윈도우의 크기를 바꿀 때
+    // scroll : 윈도우를 스크롤할 때
+    // unload : 윈도우를 닫을 때
+    // error : 에러가 있을 때
+    // ready : 문서 객체가 준비되었을 때
+
+    // click : 마우스 클릭
+    // dbclidk : 마우스 더블클릭
+    // mousedown : 마우스 버튼 누를 때
+    // mouseup : 마우스 버튼 뗄 때
+    // mousemove : 마우스를 움직일때
+    // mouseover : 마우스를 요소안에 들어올때
+    // mouseout :마우스가 요소를 벗어날때
+    // mouseenter :마우스가 요소의 경계 외부에서 내부로 이동할 때
+    // mouseleave :마우스가 요소의 경계 내부에서 외부로 이동할 때
+    // hover: mouseenter과 mouseleave를 동시에 연결
+    // --> 첫번째 매개변수에 mouseenter 이벤트 리스너, 두 번째 매개변수에 mouseleave 이벤트 리스너
+
+    // keydown : 키를 누를 때
+    // keypress :글자를 입력할 때
+    // keyup : 키로부터 손가락을 뗄 때
+
+    //hover
+    $(document).ready(function(){
+
+      $('h1').hover(function(){
+        $(this).addClass('reverse');
+      },function(){
+        $(this).removeClass('reverse');
+      });
+    });
+
+
+
+
+  </script>
+</head>
+<body>
+<h1>Header0</h1>
+<h1>Header1</h1>
+<h1>Header2</h1>
+</body>
+</html>

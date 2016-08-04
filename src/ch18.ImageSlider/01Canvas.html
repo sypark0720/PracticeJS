@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- 자바스크립트로 플래시 효과를 구현하기 위해 CSS로 설정해야 하는 것들
+    1. 캔버스의 width, height는 필수로 지정한다.
+    2. 캔버스의 position 은 relative -> left또는 top 속성을 지정하려면
+    3. 캔버스의 overflow는 hidden
+    4. 구성요소의 position은 absolute
+  -->
+
+  <style>
+    *{margin:0px; padding:0px;}
+
+    /* Animation Canvas*/
+    .animation_canvas{
+      overflow: hidden;
+      position:relative;
+      width:600px;
+      height:400px;
+    }
+
+    /*Slider Panel */
+    .slider_panel{ width:3000px; position: relative;}
+    .slider_image{float:left; width:600px; height: 400px;}
+
+    /*Slider Text Panel*/
+    .slider_text_panel{ position: absolute; top: 200px; left:50px;}
+    .slider_text{position: absolute; top: 250px; height:150px;}0
+
+    /*Control Panel*/
+    .control_panel{ position:absolute; top:380px; left:270px;height:13px; overflow:hidden;}
+    .control_button{ width:12px; height:46px; position:relative; float:left; cursor:pointer; background:url('point_button.png');}
+
+    .conrol_button:hover {top: -16px;}
+    .conrol_button.active {top: -31px;}
+  </style>
+
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      //초기 텍스트 위치 지정& 사용자가 추가로 속성 입력: data-index (data-로 시작하는 것이 좋다.)
+      $('.slider_text').css('left', -300).each(function(index){
+        $(this).attr('data-index', index);
+      });
+
+      //컨트롤버튼의 클릭 리스너 지정 및 data-index할당
+      $('.control_button').each(function(index){
+        $(this).attr('data-index', index);
+      }).click(function(){
+        var index = $(this).attr('data-index');
+        moveSlider(index);
+      });
+
+      //초기 슬라이더 위치 지정
+      var randomNumber = Math.round(Math.random()*4);
+      moveSlider(randomNumber);
+
+      //function
+      function moveSlider(index){
+        //슬라이더 이동
+        var willMoveLeft= -(index*600);
+        $('.slider_panel').animate({left: willMoveLeft},'slow');
+
+        //control button에 active클래스 부여
+        $('.control_button[data-index='+index+']').addClass('active');
+        $('.control_button[data-index !='+index+']').removeClass('active');
+
+        //글자 이동
+        $('.slider_text[data-index ='+index+']').show().animate({left: 0},'slow');
+        $('.slider_text[data-index !='+index+']').hide('slow', function(){
+          $(this).css('left',-300);
+        });
+
+      }
+
+    })
+
+  </script>
+</head>
+<body>
+<h1>---------------------</h1>
+<div class="animation_canvas">
+  <div class="slider_panel">
+    <img class="slider_image" src="images.jpg"/>
+    <img class="slider_image" src="images2.jpg"/>
+    <img class="slider_image" src="image3.jpg"/>
+    <img class="slider_image" src="image4.jpg"/>
+    <img class="slider_image" src="image5.jpg"/>
+  </div>
+  <div class="slider_text_panel">
+    <div class ="slider_text">
+      <h1>AAA</h1>
+      <p>aaaaaa</p>
+    </div>
+    <div class ="slider_text">
+      <h1>BBB</h1>
+      <p>bbbbbb</p>
+    </div>
+    <div class ="slider_text">
+      <h1>CCC</h1>
+      <p>cccccc</p>
+    </div>
+    <div class ="slider_text">
+      <h1>DDD</h1>
+      <p>dddddd</p>
+    </div>
+    <div class ="slider_text">
+      <h1>EEE</h1>
+      <p>eeeeee</p>
+    </div>
+  </div>
+  <div class="control_panel">
+    <div class="control_button"></div>
+    <div class="control_button"></div>
+    <div class="control_button"></div>
+    <div class="control_button"></div>
+    <div class="control_button"></div>
+  </div>
+</div>
+<h1>---------------------</h1>
+</body>
+</html>

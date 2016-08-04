@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('h1').on('click', 'h1', function(){ //새로 생긴 h1클릭햇을 때도 새로운게 나타남
+        var length = $('h1').length;
+        var targetHTML = $(this).html();
+        $('#wrap').append('<h1>'+length+'-'+targetHTML+'</h1>');
+      })
+
+      $('#wrap').off('click', 'h1'); //이벤트 제거
+      });
+    </script>
+</head>
+<body>
+  <div id="wrap">
+    <h1>Header</h1>
+  </div>
+</body>
+</html>

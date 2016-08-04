@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+    //show()
+    //hide()
+    //toggle()
+    //slideDown()
+    //slideUp()
+    //slideToggle()
+    //fadeIn()
+    //fadeOut()
+    //fadeToggle()
+
+    //$(selector).method();
+    //$(selector).method(speed);  speed: 효과 진행할 속도. 밀리 초 단위의 숫자 또는 slow, normal, fast
+    //$(selector).method(speed, callback); /효과를 모두 완료하고 실행할 함수
+    //$(selector).method(speed, easing, callback); /애니메이션의 easing 형태
+
+    $(document).ready(function(){
+      $('button').click(function(){
+        $('.page').slideToggle('slow');
+      })
+    })
+
+  </script>
+</head>
+<body>
+<button>Toggle show</button>
+<div class = "page">
+  <h1>lalala</h1>
+  <p>lalalalalalalalal</p>
+</div>
+</body>
+</html>
